@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.todo {
+    background-color: blue;
+    width: 600px;
+    display: grid;
+    place-content: center;
+    row-gap: 3rem;
+    padding: 3rem;
+}
+
+ul {
+    list-style: none;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.disable {
+    text-decoration: line-through;
+}

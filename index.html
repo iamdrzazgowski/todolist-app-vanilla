@@ -6,27 +6,24 @@
         <title>Document</title>
 
         <link rel="stylesheet" href="./style.css" />
-        <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     </head>
     <body>
-        <section>
+        <section class="todo">
             <div class="todo-header">
                 <h1>To-do List</h1>
 
                 <form action="#" class="todo-form">
-                    <input type="text" class="input-input" placeholder="Add a new todo" />
+                    <input type="text" class="todo-input" placeholder="Add a new todo" />
                     <button class="add-item">Add</button>
                 </form>
             </div>
 
             <div class="todolist-container">
                 <ul class="todolist">
-                    <li class="todo-item">
-                        <div class="item-content">
+                    <li>
+                        <div class="todo-item">
                             <p class="item-text">Test 1</p>
-                            <button class="del-item">
-                                <i data-feather="x"></i>
-                            </button>
+                            <button class="del-item">X</button>
                         </div>
                     </li>
                 </ul>
