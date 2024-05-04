@@ -1,4 +1,4 @@
-const todo = [];
+const todo = JSON.parse(localStorage.getItem('todo')) || [];
 const addItemBtn = document.querySelector('.add-item');
 const todoInput = document.querySelector('.todo-input');
 const todoList = document.querySelector('.todolist');
@@ -35,7 +35,12 @@ const removeTask = (index) => {
 
 const checkTask = (item) => {
     item.disable = !item.disable;
+    saveToLocalStorage();
     renderItems();
+};
+
+const saveToLocalStorage = () => {
+    localStorage.setItem('todo', JSON.stringify(todo));
 };
 
 addItemBtn.addEventListener('click', () => {
@@ -44,6 +49,11 @@ addItemBtn.addEventListener('click', () => {
     if (todoItemValue !== '') {
         todo.push({ text: todoItemValue, disable: false });
         todoInput.value = '';
-        renderItems();
+        saveToLocalStorage();
     }
+    renderItems();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderItems();
 });
