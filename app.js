@@ -63,6 +63,6 @@ addItemBtn.addEventListener('click', () => {
     renderItems();
 });
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     renderItems();
-// });
+document.addEventListener('DOMContentLoaded', () => {
+    renderItems();
+});

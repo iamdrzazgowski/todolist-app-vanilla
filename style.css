@@ -1,3 +1,13 @@
+:root {
+    --dark: #001747;
+    --grey: #b1bacb;
+    --grey-border: rgba(210, 210, 210, 0.75);
+    --grey-light: #eeeeee;
+    --blue: #2d70fd;
+    --green: #00d8a7;
+    --white: #ffffff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,22 +15,70 @@
 }
 
 body {
+    display: grid;
+    justify-items: center;
+    align-items: center;
     font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
-    display: grid;
-    justify-content: center;
-    align-content: center;
     background-color: #8ec5fc;
     background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
 }
 
 .todo {
-    background-color: blue;
-    width: 600px;
-    display: grid;
-    place-content: center;
-    row-gap: 3rem;
-    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--white);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    width: 90%;
+    max-width: 600px;
+}
+
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.todo-form {
+    position: relative;
+}
+
+.todo-input {
+    width: 100%;
+    border: 0.06rem solid #d2d2d2bf;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    font-size: 1rem;
+}
+
+input[type='text']::placeholder {
+    color: var(--grey);
+}
+
+.add-item {
+    color: var(--white);
+    font-size: 1.1rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: 0.3rem;
+    background-color: var(--blue);
+    border: none;
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+}
+
+.todolist-container {
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 1rem;
+    border-radius: 0.3rem;
+}
+
+.disable {
+    text-decoration: line-through;
+    color: var(--grey);
 }
 
 ul {
@@ -30,8 +88,36 @@ ul {
 .todo-item {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
 }
 
-.disable {
-    text-decoration: line-through;
+.item-text {
+    font-size: 1.5rem;
+    max-width: 300px;
+    overflow-wrap: break-word;
+}
+
+.del-item {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: transparent;
+}
+
+.del-item > * {
+    font-size: 25px;
+    color: red;
+}
+
+*::-webkit-scrollbar {
+    width: 0.3rem;
+}
+
+*::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--grey);
+    outline: 1px solid var(--grey-light);
 }
