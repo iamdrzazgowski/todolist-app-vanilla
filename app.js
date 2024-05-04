@@ -12,7 +12,9 @@ const renderItems = () => {
         element.innerHTML = `
             <div class="todo-item">
                 <p class="item-text ${item.disable ? 'disable' : ''}">${item.text}</p>
-                <button class="del-item"">X</button>
+                <button class="del-item"">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
             </div>
         `;
 
@@ -35,6 +37,13 @@ const removeTask = (index) => {
 
 const checkTask = (item) => {
     item.disable = !item.disable;
+
+    console.log(todo);
+
+    if (todo.every((e) => e.disable)) {
+        todo.splice(0, todo.length);
+    }
+
     saveToLocalStorage();
     renderItems();
 };
@@ -54,6 +63,6 @@ addItemBtn.addEventListener('click', () => {
     renderItems();
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    renderItems();
-});
+// document.addEventListener('DOMContentLoaded', () => {
+//     renderItems();
+// });
