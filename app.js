@@ -11,7 +11,9 @@ const renderItems = () => {
 
         element.innerHTML = `
             <div class="todo-item">
-                <p class="item-text ${item.disable ? 'disable' : ''}">${item.text}</p>
+                <p class="item-text ${item.disable ? 'disable' : ''}">${
+            item.text
+        }</p>
                 <button class="del-item"">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
@@ -37,8 +39,6 @@ const removeTask = (index) => {
 
 const checkTask = (item) => {
     item.disable = !item.disable;
-
-    console.log(todo);
 
     if (todo.every((e) => e.disable)) {
         todo.splice(0, todo.length);
